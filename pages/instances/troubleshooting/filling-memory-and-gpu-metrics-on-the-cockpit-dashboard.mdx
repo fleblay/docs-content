@@ -1,0 +1,19 @@
+---
+title: Missing memory and GPU metrics on the cockpit dashboard
+tags: cockpit instance
+dates:
+  validation:
+  posted:
+---
+
+When no metrics can be seen on the cocpit's `Instance Overview` or
+`Instance GPUs` dashboards, you should check the vmagent (folded-by default)
+row. It will tell you on which vm the scaleway-vmagent is answering  requests.
+
+If the vmagent is not installed on your machine, you can install it by adding
+the [scaleway ppa (on ubuntu)](https://launchpad.net/~scaleway/+archive/ubuntu/stable) or
+[copr (if RHEL based)](https://copr.fedorainfracloud.org/coprs/g/scaleway/stable/)
+and install the `scaleway-vmagent` package (respectively with apt or dnf).
+
+If installed, you may check that the service is running with
+`systemctl status scaleway-vmagent`.
